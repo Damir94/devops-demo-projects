@@ -43,3 +43,10 @@ and verifying the deployed website using the generated Website Endpoint.
 - The Create Bucket option was selected.
 - The Block Public Access setting was disabled after confirming the warning message.
 - Finally, the bucket was created successfully.
+
+## Step 2: Create Website Files
+- The website files were created using Visual Studio Code. Two HTML files were prepared:
+  ● index.html – Displays the homepage of the website.
+  ● error.html – Displays an error message if the requested page is unavailable.
+- These files contained the required HTML content for demonstrating static website hosting.
+
