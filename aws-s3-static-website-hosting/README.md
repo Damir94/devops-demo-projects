@@ -1,6 +1,6 @@
 ### AWS S3 Static Website Hosting
 
-<img width="933" height="267" alt="Screenshot 2026-09-17 at 4 40 12 PM" src="https://github.com/user-attachments/assets/1588bb55-b68d-43ee-ace4-3ed2ad03f5de" />
+<img width="2172" height="724" alt="ChatGPT Image Sep 19, 2026, 10_19_51 AM" src="https://github.com/user-attachments/assets/6a7c126c-b714-4bb9-8e01-62dabd3223ab" />
 
 ## Project Objective
 The objective of this project is to host a static website using Amazon S3. It helps in
