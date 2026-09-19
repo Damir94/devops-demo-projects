@@ -41,12 +41,66 @@ and verifying the deployed website using the generated Website Endpoint.
 ## Step 1: Create Amazon S3 Bucket
 
 - The Create Bucket option was selected.
+
+<img width="926" height="417" alt="Screenshot 2026-09-19 at 9 33 59 AM" src="https://github.com/user-attachments/assets/28b18b04-3a13-4acf-b303-2bc337c8f457" />
+
 - The Block Public Access setting was disabled after confirming the warning message.
 - Finally, the bucket was created successfully.
 
-## Step 2: Create Website Files
-- The website files were created using Visual Studio Code. Two HTML files were prepared:
-  ● index.html – Displays the homepage of the website.
-  ● error.html – Displays an error message if the requested page is unavailable.
-- These files contained the required HTML content for demonstrating static website hosting.
+<img width="1147" height="482" alt="Screenshot 2026-09-19 at 9 35 02 AM" src="https://github.com/user-attachments/assets/f4febdf4-71f8-4420-9e66-4be09d3eb3b0" />
 
+
+## Step 2: Enable Static Website Hosting
+- Open the S3 bucket.
+- Go to the Properties tab.
+- Find Static website hosting.
+- Click Edit.
+- Select Enable.
+- Choose:
+  - Hosting type: Host a static website
+  - Set the index document: index.html
+  - Set the error document: error.html
+- Save the changes.
+
+<img width="817" height="601" alt="Screenshot 2026-09-19 at 9 42 35 AM" src="https://github.com/user-attachments/assets/248365c1-4a90-4967-9143-991a180affe1" />
+
+## Step 3: Upload Website Files
+- Open the S3 bucket.
+- Select Upload.
+- Add:
+  - index.html
+  - error.html
+- Click Upload.
+- The files are now stored as objects inside the S3 bucket.
+
+<img width="1867" height="399" alt="Screenshot 2026-09-19 at 9 48 36 AM" src="https://github.com/user-attachments/assets/72e4c2fd-2f74-4c42-a487-64e74353cf9a" />
+
+## Add a Bucket Policy
+- For a basic public static website, add a bucket policy that allows public read access to the website objects
+- Replace resource name with your actual bucket name.
+
+```bash
+{
+    "Version":"2012-10-17",
+    "Statement":[
+      {
+        "Sid":"PublicRead",
+        "Effect":"Allow",
+        "Principal": "*",
+        "Action":["s3:GetObject"],
+        "Resource":["arn:aws:s3:::examplebucket/*"]
+      }
+    ]
+  }
+```
+
+## Step 4: Access Website Using Website Endpoint
+- After completing all the configurations, the generated Website Endpoint was copied and opened in a web browser. Amazon S3 successfully served the index.html page, confirming that the website had been hosted correctly.
+
+<img width="1270" height="139" alt="Screenshot 2026-09-19 at 9 59 53 AM" src="https://github.com/user-attachments/assets/9e12ac5f-4f87-4247-b949-54d64ee98e95" />
+
+## Step 5: Final Website Output
+- The website was successfully displayed in the browser using the generated S3 Website Endpoint.
+- The output confirmed that the HTML files had been uploaded correctly and that Static Website Hosting was working as expected.
+
+<img width="888" height="737" alt="Screenshot 2026-09-19 at 10 01 15 AM" src="https://github.com/user-attachments/assets/1227fad0-786c-4dec-884f-a0ac2eeadbfa" />
