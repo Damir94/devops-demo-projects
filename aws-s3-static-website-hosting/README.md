@@ -75,7 +75,7 @@ and verifying the deployed website using the generated Website Endpoint.
 
 <img width="1867" height="399" alt="Screenshot 2026-09-19 at 9 48 36 AM" src="https://github.com/user-attachments/assets/72e4c2fd-2f74-4c42-a487-64e74353cf9a" />
 
-## Add a Bucket Policy
+## Step 4: Add a Bucket Policy
 - For a basic public static website, add a bucket policy that allows public read access to the website objects
 - Replace resource name with your actual bucket name.
 
@@ -94,12 +94,12 @@ and verifying the deployed website using the generated Website Endpoint.
   }
 ```
 
-## Step 4: Access Website Using Website Endpoint
+## Step 5: Access Website Using Website Endpoint
 - After completing all the configurations, the generated Website Endpoint was copied and opened in a web browser. Amazon S3 successfully served the index.html page, confirming that the website had been hosted correctly.
 
 <img width="1270" height="139" alt="Screenshot 2026-09-19 at 9 59 53 AM" src="https://github.com/user-attachments/assets/9e12ac5f-4f87-4247-b949-54d64ee98e95" />
 
-## Step 5: Final Website Output
+## Step 6: Final Website Output
 - The website was successfully displayed in the browser using the generated S3 Website Endpoint.
 - The output confirmed that the HTML files had been uploaded correctly and that Static Website Hosting was working as expected.
 
