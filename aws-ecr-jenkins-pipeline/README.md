@@ -40,3 +40,19 @@ Click on “Create key Pair”
 - Click on “View all instances”
 
 <img width="720" height="118" alt="1_Ms9rKpiRuOPjMmGFYWvXHA" src="https://github.com/user-attachments/assets/0ff89b81-19b4-43c4-89f9-01a21fd452e3" />
+
+PART 2: SSH Connect to the instance
+
+- Select the instance we just create
+
+<img width="720" height="405" alt="1_EwrM_rEMb0x_3xgQuQfz1w" src="https://github.com/user-attachments/assets/7b0f942c-055c-4f12-8516-a3370d8052a4" />
+
+- Click on “Connect”
+
+<img width="720" height="310" alt="1_Ox_NKoXBH-h1Ss_Wk10l-Q" src="https://github.com/user-attachments/assets/c54dbfae-e341-43e0-91e5-b7308929004c" />
+
+- Click on “Connect” again
+
+<img width="720" height="390" alt="1_PyYtABm4Q-1pr5LOdApalg" src="https://github.com/user-attachments/assets/7c198e65-0839-46dd-919b-c60033fcd055" />
+
+- We have now SSH connect to the instance
