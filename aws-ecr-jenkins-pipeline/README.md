@@ -178,9 +178,6 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 - Click on “Credentials”
 
-<img width="1777" height="493" alt="Screenshot 2026-10-02 at 11 00 24 AM" src="https://github.com/user-
-attachments/assets/7970fe14-4100-46b2-8427-e9553a672e13" />
-
 - Click on “System”
 - Click on “Global credentials”
 - Click on “Add Credentials”
