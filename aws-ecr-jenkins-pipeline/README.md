@@ -352,10 +352,7 @@ pipeline {
 - Click on “Save”
 - Now, click on “Build Now”
 
-<img width="1287" height="664" alt="Screenshot 2026-10-02 at 11 36 57 AM" src="https://github.com/user-attachments/assets/48aa0b42-aca5-4508-9c85-591938a42041" />
-
 <img width="1190" height="823" alt="Screenshot 2026-10-02 at 1 01 37 PM" src="https://github.com/user-attachments/assets/ed6dd0d3-da60-483f-9e31-459d5e1dcb67" />
-
 
 - The build is successful. Now let us Check ECR Repo our image push or not
 
