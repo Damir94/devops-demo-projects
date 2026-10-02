@@ -35,7 +35,7 @@ Click on “Create key Pair”
 
 - Click on “Launch Instance”
 
-<img width="720" height="402" alt="1_m3VPMFB0tTsZywdgz8t0Kw" src="https://github.com/user-attachments/assets/8e098c55-976d-4335-ab57-f5d1c306eab7" />
+<img width="1195" height="665" alt="Screenshot 2026-10-02 at 10 25 05 AM" src="https://github.com/user-attachments/assets/3fc73c45-4fad-4e41-bc71-78c9f02cb54b" />
 
 - Click on “View all instances”
 
