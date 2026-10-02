@@ -6,7 +6,7 @@
 - AWS Account with Admin Privileges
 - GitHub Account that will be cloned https://github.com/sd031/aws_codebuild_codedeploy_nodeJs_demo
 
-## Step #1: Configuring an Ubuntu EC2 instance in AWS and SSH Connect to the instance
+## Step 1: Configuring an Ubuntu EC2 instance in AWS and SSH Connect to the instance
 
 PART 1: Create the ubuntu EC2 instance
 - Go to the AWS dashboard and then to the EC2 services.
