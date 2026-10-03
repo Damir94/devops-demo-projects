@@ -118,10 +118,130 @@ ease.
 - The load balancer is being created
 - The application load balancer is provisioning, wait for it to be active
 
+<img width="1589" height="730" alt="Screenshot 2026-10-03 at 11 21 36 AM" src="https://github.com/user-attachments/assets/da746688-3cc6-4d23-a0cd-be019f0c7a59" />
 
 - The application load balancer is now “ACTIVE”.
 
+<img width="1600" height="289" alt="Screenshot 2026-10-03 at 11 24 39 AM" src="https://github.com/user-attachments/assets/c51ddf9c-ede0-4141-8e20-d1095d328c71" />
 
 ## STEP 4: Create ECS Task Definition
 - The next step is to create the ECS Task Definition. Go to AWS Management Console and search for “ECS”. Task definition is the blue print of your container.
-<img width="1589" height="730" alt="Screenshot 2026-10-03 at 11 21 36 AM" src="https://github.com/user-attachments/assets/da746688-3cc6-4d23-a0cd-be019f0c7a59" />
+
+<img width="1251" height="395" alt="Screenshot 2026-10-03 at 11 25 10 AM" src="https://github.com/user-attachments/assets/d25be36f-4698-477f-b990-39b2e49ce770" />
+
+- Click on “Elastic Container Service”
+- Click on “Task Definition”
+- Click on the drop down on “Create new task definition” and select “Create new task definition”
+
+<img width="1555" height="312" alt="Screenshot 2026-10-03 at 11 26 12 AM" src="https://github.com/user-attachments/assets/457ac5c6-603a-4eab-86ab-baa15d95cf75" />
+
+- Give the Task Definition a name, I will call it wordpress-task-def. In “Infrastructure Requirements”, choose “AWS Fargate”
+
+<img width="1064" height="421" alt="Screenshot 2026-10-03 at 11 27 16 AM" src="https://github.com/user-attachments/assets/cd856755-7704-4d3e-aab1-aa21e89b549c" />
+
+- Scroll down to Task Role
+- Click on “IAM Console” and a new window will pop up
+
+<img width="1296" height="312" alt="Screenshot 2026-10-03 at 11 30 21 AM" src="https://github.com/user-attachments/assets/55a2cf2c-b5fd-4b96-a6c1-abd667b02067" />
+
+- On “Trusted Entity Type”, select “AWS Service” and on “Use Case”, search for “Elastic Container Service”. The select “Elastic Container Service -Task”.
+- Click on “Next”
+
+<img width="1107" height="759" alt="Screenshot 2026-10-03 at 11 31 37 AM" src="https://github.com/user-attachments/assets/5d078343-e233-4bc0-a7be-b9b513f9a2e6" />
+
+- The permission we will be giving to this is “AmazonECSTaskExecutionRolePolicy”, search for “AmazonECSTask”
+
+<img width="1558" height="645" alt="Screenshot 2026-10-03 at 11 32 55 AM" src="https://github.com/user-attachments/assets/db79c060-90b3-4031-b5d3-c372aee7d6bd" />
+
+- Select the policy and click on “Next”
+- Give the role a name. I will call it “ECSTaskExecutionRole”
+- Click on “Create Role”
+
+<img width="1216" height="467" alt="Screenshot 2026-10-03 at 11 33 46 AM" src="https://github.com/user-attachments/assets/8ab9edd7-669e-4140-acf7-7a234b013a1f" />
+
+- The role has been created. I will go back and continue with my Task definition tab
+
+<img width="1555" height="521" alt="Screenshot 2026-10-03 at 11 34 37 AM" src="https://github.com/user-attachments/assets/b9dd3bdb-025f-44d4-9efc-a4fa7621d98b" />
+
+- Click on the drop down and select the Task Role we just created
+
+<img width="1050" height="177" alt="Screenshot 2026-10-03 at 11 35 29 AM" src="https://github.com/user-attachments/assets/fa1feee4-a84e-4310-bdef-100470c14fa0" />
+
+- Scroll down to “Container-1”
+- On the container name, enter “wordpress” and on the “Image URI”, also enter wordpress since we are using the default WordPress image.
+
+<img width="1505" height="339" alt="Screenshot 2026-10-03 at 11 37 01 AM" src="https://github.com/user-attachments/assets/6d20f6ab-5142-4e35-b84a-0c359220d2ca" />
+
+- Scroll down to the end
+- Click on “Create”
+
+<img width="1550" height="567" alt="Screenshot 2026-10-03 at 11 38 01 AM" src="https://github.com/user-attachments/assets/5799e171-b3d5-410a-9a3b-10e6c65545af" />
+
+- Click on “View task Definition”
+- We have created the Task Definition. Let is now create the ECS Cluster.
+
+<img width="1541" height="354" alt="Screenshot 2026-10-03 at 11 39 06 AM" src="https://github.com/user-attachments/assets/f9ff9b20-3bb3-4cc7-a93c-628e08abf02d" />
+
+### STEP 4: Create ECS Cluster
+
+- Click on “Clusters”
+- Click on “Create Cluster”
+
+<img width="1540" height="432" alt="Screenshot 2026-10-03 at 11 40 01 AM" src="https://github.com/user-attachments/assets/60f697da-f0c7-4993-ab8f-e9b750c04c99" />
+
+- Give the cluster a name, I will call it “wordpress-cluster”
+- On “Infrastructure – Optional”, we will use “AWS Fargate”. Scroll down to the end
+- Click on “Create”
+
+<img width="1528" height="602" alt="Screenshot 2026-10-03 at 11 41 10 AM" src="https://github.com/user-attachments/assets/b66ea160-46be-439b-8e34-61f8cf05f04b" />
+
+- The cluster is being created
+
+<img width="1566" height="444" alt="Screenshot 2026-10-03 at 11 51 11 AM" src="https://github.com/user-attachments/assets/9897fc3b-de32-4f10-9520-3594ecc63373" />
+
+### STEP 6: Create ECS Service
+
+- The cluster has been created, click on the cluster name
+- Click on “Create”
+
+<img width="1522" height="400" alt="Screenshot 2026-10-03 at 11 52 01 AM" src="https://github.com/user-attachments/assets/1f6af133-05c7-4b6a-b207-ef207f3c9c16" />
+
+- Click on the drop down and select the Task definition we created
+- Let is give the service a name, I will call it “wordpress-service”
+
+<img width="1201" height="509" alt="Screenshot 2026-10-03 at 11 53 27 AM" src="https://github.com/user-attachments/assets/12f80d2e-5fe6-477a-a8bc-8a7424a99f8b" />
+
+- Scroll down to “Networking” and click on it
+- Select the VPC we created
+- Click on the drop down and select the security group we created for this project
+
+<img width="1174" height="777" alt="Screenshot 2026-10-03 at 11 54 51 AM" src="https://github.com/user-attachments/assets/b23df9b5-d590-4327-976e-19fdc4864352" />
+
+- Scroll down to “Load Balancer”
+- Check the box on “Use Load Balancing”
+- Select “Use an existing load balancer”
+- Click on the drop down and select the Application Load Balancer we created
+
+<img width="1081" height="824" alt="Screenshot 2026-10-03 at 11 56 29 AM" src="https://github.com/user-attachments/assets/a56d1c8a-8a46-4d2b-9a23-34cc818bc23c" />
+
+- Scroll down to “Listener”
+- On “Listener”, select “Use an existing listener”, then click on the drop down and select “HTTP:80”.
+- And on “Target Group”, select “Use an existing Target Group”, then click on the drop down and select the target group we created.
+
+<img width="1141" height="778" alt="Screenshot 2026-10-03 at 11 57 55 AM" src="https://github.com/user-attachments/assets/e659449e-83c7-493f-98ef-b09eea2b4ee6" />
+
+- Scroll down to the end
+- Click on “Create”
+- The service is being created
+
+<img width="1513" height="646" alt="Screenshot 2026-10-03 at 11 58 47 AM" src="https://github.com/user-attachments/assets/8309a0b3-b3ba-4054-b311-8f95627e8e62" />
+
+- Our service has been created. Click on the service name
+- Click on “Configuration and Networking”
+- Copy the DNS name and paste on your web browser
+
+<img width="1500" height="398" alt="Screenshot 2026-10-03 at 12 00 46 PM" src="https://github.com/user-attachments/assets/9808b0e1-0d9b-45e0-8655-d5fdde8cd5cd" />
+
+- We have been able to successfully deploy our WordPress site using ECS. We started by creating our own VPC, Security Group, our load balancer, our target group. We also created our Task definition in ECS, our cluster and our service.
+
+<img width="1893" height="1034" alt="Screenshot 2026-10-03 at 1 44 20 PM" src="https://github.com/user-attachments/assets/2dde2655-f415-4715-a88e-ab09c5c9f55b" />
